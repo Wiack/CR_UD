@@ -35,10 +35,16 @@
                 <td th:text="${user.getLastName()}"></td>
                 <td th:text="${user.getAge}"></td>
                 <td>
-                    <form th:action="@{/edit_user/{id}(id=${user.getId()})}">
+                    <!--                    <form th:action="@{/edit_user/{id}(id=${user.getId()})}">-->
+                    <!--                        <input type="submit" value="UPDATE"/>-->
+                    <!--                    </form>-->
+                    <!--                    <form th:method="DELETE" th:action="@{/delete_user/{id}(id=${user.getId()})}">-->
+                    <!--                        <input type="submit" value="DELETE"/>-->
+                    <!--                    </form>-->
+                    <form th:action="@{/updateInfoUser/{id}(id=${user.getId()})}">
                         <input type="submit" value="UPDATE"/>
                     </form>
-                    <form th:method="DELETE" th:action="@{/delete_user/{id}(id=${user.getId()})}">
+                    <form th:method="DELETE" th:action="@{/deleteUser/{id}(id=${user.getId()})}">
                         <input type="submit" value="DELETE"/>
                     </form>
 
@@ -47,7 +53,10 @@
         </th:block>
 
     </table>
-    <form th:action="@{/add_user}">
+    <!--    <form th:action="@{/add_user}">-->
+    <!--        <input type="submit" value="ADD"/>-->
+    <!--    </form>-->
+    <form th:action="@{/addNewUser}">
         <input type="submit" value="ADD"/>
     </form>
 

@@ -22,7 +22,9 @@
 
     <br>
 
-    <form th:method="patch" th:action="@{/save_edit_user(id=${user.getId()})}" th:object="${user}">
+    <form th:method="patch" th:action="@{/updeteInfo(id=${user.getId()})}" th:object="${user}">
+
+
         <p>
             <label for="first_name">First Name: </label>
             <input type="text" th:field="${user.firstName}" id="first_name"/>
