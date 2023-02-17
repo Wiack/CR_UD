@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>NEW USER</title>
+    <style>
+        #a {
+            margin-left: 34%;
+            width: 25%;
+            background: #fc0;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="a">
+    <h2>USER DETAILS</h2>
+    <br>
+
+
+    <form th:action="@{/}">
+        <input type="submit" value="Cancel"/>
+    </form>
+    <br>
+
+    <form th:method="post" th:action="@{/}" th:object="${user}">
+        <p>
+            <label for="first_name">FIRST NAME: </label>
+            <input type="text" th:field="${user.firstName}" id="first_name"/>
+        </p>
+        <p>
+            <label for="last_name">LAST NAME: </label>
+            <input type="text" th:field="${user.lastName}" id="last_name"/>
+        </p>
+        <p>
+            <label for="age">AGE: </label>
+            <input type="text" th:field="${user.age}" id="age"/>
+        </p>
+        <br>
+        <input type="submit" value="ADD"/>
+    </form>
+
+</div>
+</body>
+</html>

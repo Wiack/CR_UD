@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>EDIT USER</title>
+
+
+    <style>
+        #b {
+            margin-left: 34%;
+            width: 25%;
+            background: #d24dff;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="b">
+    <h2>USER DETAILS</h2>
+    <br>
+
+    <br>
+
+    <form th:method="patch" th:action="@{/save_edit_user(id=${user.getId()})}" th:object="${user}">
+        <p>
+            <label for="first_name">First Name: </label>
+            <input type="text" th:field="${user.firstName}" id="first_name"/>
+        </p>
+        <p>
+            <label for="last_name">Last Name: </label>
+            <input type="text" th:field="${user.lastName}" id="last_name"/>
+        </p>
+        <p>
+            <label for="age">Age: </label>
+            <input type="text" th:field="${user.age}" id="age"/>
+        </p>
+        <br>
+        <input type="submit" value="SAVE"/>
+    </form>
+    <form th:action="@{/}">
+        <input type="submit" value="CANCEL"/>
+    </form>
+
+</div>
+</body>
+</html>
