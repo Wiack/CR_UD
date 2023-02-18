@@ -27,30 +27,30 @@ public class UserController {
         return "allUser";
     }
 
-    //Методы должны быть глаголами ...  (в смешанном регистре с первой строчной буквой, с первой буквой каждого внутреннего слова с заглавной буквы)
+    //СПАСИБО)
 
     @GetMapping("/newUser")
-    public String createNewUser(Model model) {
-        model.addAttribute("user", new User()); //создаем нового пользователя
+    public String getCreationForm(Model model) {
+        model.addAttribute("user", new User());
         return "detailsNewUser";
     }
 
     @PostMapping()
     public String saveNewUser(@ModelAttribute("user") User user) {
-        userService.saveUser(user); //сохраняем нового пользователя
+        userService.saveUser(user);
         return "redirect:/";
     }
 
 
     @GetMapping("/editInfo/{id}")
-    public String editInfoUser(@PathVariable("id") Long id, Model model) {  //редактируем информацию о пользователе
+    public String getEditingForm(@PathVariable("id") Long id, Model model) {
         model.addAttribute("user", userService.getUserById(id));
         return "editInfoUser";
     }
 
 
     @PatchMapping("/updeteInfo")
-    public String saveEditInfoUser(@ModelAttribute("user") User user) { //сохраняем отредактированную информацию о пользователе
+    public String saveEditInfoUser(@ModelAttribute("user") User user) {
         userService.update(user);
         return "redirect:/";
     }
